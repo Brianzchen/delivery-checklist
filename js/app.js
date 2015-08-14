@@ -1,5 +1,5 @@
 (function() {
-  Parse.initialize("p45yej86tibQrsfKYCcj6UmNw4o7b6kxtsobZnmA", "fXSkEhDGakCYnVv5OOdAfWDmjAuQvlnFI5KOwIUO");
+  Parse.initialize("cBfbLa5CmmA1m7ibqFlAP0oJswW49Yzicb0I9CE7", "xxdIH9cljrRZXNhVc3XGvLFtzRAB1ltymE1o84bB");
   var ShopData = Parse.Object.extend("ShopData");
   var shopData;
   var query = new Parse.Query(ShopData);
