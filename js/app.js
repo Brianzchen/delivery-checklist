@@ -57,6 +57,7 @@
       self.selectedBranch.city = data.city;
       loadShopDataList(data, $compile, $scope);
       self.selectedBranch.selected = true;
+      $('html, body').animate({ scrollTop: 0 }, 'fast');
     };
 
     // Submit the order data to the server for later
@@ -76,6 +77,7 @@
         for (i = 0, len = self.items.length; i < len; i++) {
           self.items[i].ordered = 0;
         }
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
       }
     };
 

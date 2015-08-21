@@ -106,10 +106,6 @@ ul {
   list-style-type: none;
 }
 
-ul:hover {
-  cursor: pointer;
-}
-
 li {
   margin-top: 5px;
 }
@@ -142,6 +138,7 @@ li {
   padding: 5px 20px 6px 20px;
   text-decoration: none;
   outline:none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -170,6 +167,7 @@ li {
   padding: 5px 20px 6px 20px;
   text-decoration: none;
   outline:none;
+  cursor: pointer;
 }
 
 .btnShops:hover {

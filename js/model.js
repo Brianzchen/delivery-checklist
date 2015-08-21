@@ -350,8 +350,17 @@ var model = {
       "ordered": 0
     },
     {
-      "code": "POTA01",
-      "description": "Potato bag 3.0kg",
+      "code": "POTA01R",
+      "description": "Potato bag 3.0kg red",
+      "unit": "1000",
+      "quantity": 1000,
+      "packaging": "1,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "POTA01Y",
+      "description": "Potato bag 3.0kg yellow",
       "unit": "1000",
       "quantity": 1000,
       "packaging": "1,000 pcs/ctn",
@@ -541,8 +550,8 @@ var model = {
       "ordered": 0
     },
     {
-      "code": "MUSH03",
-      "description": "Mushroom plastic bag (200x375mm)",
+      "code": "MUSH0325",
+      "description": "Mushroom plastic bag (200x375mm) 2,500 pcs",
       "unit": "1000",
       "quantity": 2500,
       "packaging": "2,500 pcs/ctn",
@@ -550,8 +559,53 @@ var model = {
       "ordered": 0
     },
     {
+      "code": "MUSH035",
+      "description": "Mushroom plastic bag (200x375mm) 5,000 pcs",
+      "unit": "1000",
+      "quantity": 5000,
+      "packaging": "5,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "RE010",
+      "description": "Resealable bag (130x155mm)",
+      "unit": "1000",
+      "quantity": 500,
+      "packaging": "500 pcs/box",
+      "orderAs": "box",
+      "ordered": 0
+    },
+    {
       "code": "RE017",
       "description": "Resealable bag (200x255mm)",
+      "unit": "1000",
+      "quantity": 250,
+      "packaging": "250 pcs/box",
+      "orderAs": "box",
+      "ordered": 0
+    },
+    {
+      "code": "RE018",
+      "description": "Resealable bag (255x355mm)",
+      "unit": "1000",
+      "quantity": 250,
+      "packaging": "250 pcs/box",
+      "orderAs": "box",
+      "ordered": 0
+    },
+    {
+      "code": "RE019",
+      "description": "Resealable bag (305x380mm)",
+      "unit": "1000",
+      "quantity": 250,
+      "packaging": "250 pcs/box",
+      "orderAs": "box",
+      "ordered": 0
+    },
+    {
+      "code": "RE020",
+      "description": "Resealable bag (305x440mm)",
       "unit": "1000",
       "quantity": 250,
       "packaging": "250 pcs/box",
@@ -701,6 +755,30 @@ var model = {
       "unit": "box",
       "packaging": "10 boxes/ctn",
       "orderAs": "box",
+      "ordered": 0
+    },
+    {
+      "code": "CHB02",
+      "description": "Checkout paper bag (Medium)",
+      "unit": "Ctn",
+      "packaging": "250 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "JAR",
+      "description": "Plastic jar with lid",
+      "unit": "Set",
+      "packaging": "200 sets/ctn+ctn",
+      "orderAs": "sets",
+      "ordered": 0
+    },
+    {
+      "code": "SOS37014",
+      "description": "SOS bock bottom paper bag #37014",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
       "ordered": 0
     }
   ]
