@@ -25,6 +25,11 @@ var buildPackingSlips = function(spreadsheetArray) {
   var packingSlip;
   var orderNum;
 
+  // Formats date
+  var systemDate = new Date();
+  var tokens = systemDate.toString().split(" ");
+  var date = tokens[2] + " " + tokens[1] + " " + tokens[3];
+
   var OrderNumber = Parse.Object.extend("OrderNumber");
   var queryOrderNumber = new Parse.Query(OrderNumber);
   queryOrderNumber.exists("orderNumber");
@@ -50,8 +55,8 @@ var buildPackingSlips = function(spreadsheetArray) {
           packingSlip += '<p class="packingP">Email: <a href="#">feltd@xtra.co.nz</a></p></div>';
           // Right column of subheading
           packingSlip += '<div class="col-4">';
-          packingSlip += '<p class="packingP right">Phone:    (09) 276-2681</p>';
-          packingSlip += '<p class="packingP right">Fax:      (09) 276-2682</p>';
+          packingSlip += '<p class="packingP right">Phone:    (09) 276-8681</p>';
+          packingSlip += '<p class="packingP right">Fax:      (09) 276-8682</p>';
           packingSlip += '<p class="packingP right">Website:  <a href="#">www.fortunenz.com </a></p></div>';
           packingSlip += '</div>';
           // Left side shop details
@@ -75,7 +80,7 @@ var buildPackingSlips = function(spreadsheetArray) {
           packingSlip += '<p class="packingP">Account no.: ';
           packingSlip += spreadsheetArray[i].attributes.acc;
           packingSlip += '</p>';
-          packingSlip += '<p class="packingP">Date: ' + new Date().toJSON().slice(0,10) + '</p>';
+          packingSlip += '<p class="packingP">Date: ' + date + '</p>';
           packingSlip += '</div></div>';
           // Item details with table
           var table = '';
@@ -87,7 +92,7 @@ var buildPackingSlips = function(spreadsheetArray) {
           packingSlip += table;
           // Name and signature
           packingSlip += '<div class="packingSign">';
-          packingSlip += '<p>Name: _________________________________</p>';
+          packingSlip += '<p>Name: _________________________________</p><br>';
           packingSlip += '<p>Signature: _____________________________</p>';
 
           $("#packingSlip").append(packingSlip);
@@ -152,12 +157,22 @@ var buildPackingRow = function(spreadsheetArray) {
         table += '</td>';
         table += '<td>';
 
-        // Calculation for displaying correct quantities
-        if (items[k].unit == "1000") {
+        // Logic for displaying correct quantities
+        if (items[k].code.includes("RE")) {
+          var reQuantitiy = spreadsheetArray.attributes[items[k].code] * 1000;
+          table += insertComma(reQuantitiy.toString()) + " pcs";
+        } else if (items[k].unit == "1000") {
           quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
-          table += quantity + " pcs";
-        } else if (items[k].packaging.includes("4 rolls/ctn") && items[k].description.includes("bag")) {
-          table += (spreadsheetArray.attributes[items[k].code] * 4) + " roll";
+
+          // Checks if it's a set item or just normal pcs
+          if (items[k].orderAs == "ctn+ctn") {
+            table += insertComma(quantity.toString()) + " sets";
+          } else {
+            table += insertComma(quantity.toString()) + " pcs";
+          }
+        } else if (items[k].unit == "Roll" && items[k].orderAs == "ctn") {
+          quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
+          table += insertComma(quantity.toString()) + " rolls";
         } else {
           table += spreadsheetArray.attributes[items[k].code] + " " + items[k].orderAs;
         }
@@ -165,9 +180,9 @@ var buildPackingRow = function(spreadsheetArray) {
         table += '</td>'
         table += '<td>'
 
-        // Calculation for displaying correct carton values
+        // Logic for displaying correct carton values
 
-        // Calculation for gloves
+        // Logic for gloves
         if (items[k].code.includes("GLOVE") && spreadsheetArray.attributes[items[k].code]%10 !== 0) {
           if (spreadsheetArray.attributes[items[k].code] < 10) {
             table += (spreadsheetArray.attributes[items[k].code] % 10)+ " boxes";
@@ -176,7 +191,7 @@ var buildPackingRow = function(spreadsheetArray) {
           }
         } else if (items[k].unit == "box") {
           table += (spreadsheetArray.attributes[items[k].code] / 10) + " ctn";
-        // Calculation for bag seal tape 9mmx66m
+        // Logic for bag seal tape 9mmx66m
         } else if (items[k].code.includes("SEAL09")) {
           if (spreadsheetArray.attributes[items[k].code]%48 === 0) {
             table += (spreadsheetArray.attributes[items[k].code] / 48) + " ctn";
@@ -187,7 +202,7 @@ var buildPackingRow = function(spreadsheetArray) {
               table += ((spreadsheetArray.attributes[items[k].code]/48)-((spreadsheetArray.attributes[items[k].code]%48)/48)) + " ctn + " + (spreadsheetArray.attributes[items[k].code] % 48)+ " rolls";
             }
           }
-        // Calculation for bag seal tape 12mmx66m
+        // Logic for bag seal tape 12mmx66m
         } else if (items[k].code.includes("SEAL12")) {
           if (spreadsheetArray.attributes[items[k].code]%36 === 0) {
             table += (spreadsheetArray.attributes[items[k].code] / 36) + " ctn";
@@ -198,6 +213,20 @@ var buildPackingRow = function(spreadsheetArray) {
               table += ((spreadsheetArray.attributes[items[k].code]/36)-((spreadsheetArray.attributes[items[k].code]%36)/36)) + " ctn + " + (spreadsheetArray.attributes[items[k].code] % 36)+ " rolls";
             }
           }
+        // Logic for resealable bags
+        } else if (items[k].code.includes("RE")) {
+          if (reQuantitiy < items[k].quantity) {
+            table += insertComma(reQuantitiy.toString()) + " pcs";
+          } else {
+            if (reQuantitiy%items[k].quantity === 0) {
+              table += (reQuantitiy / items[k].quantity) + " ctn";
+            } else {
+              table += ((reQuantitiy/items[k].quantity)-((reQuantitiy%items[k].quantity)/items[k].quantity)) + " ctn + " + insertComma((reQuantitiy % items[k].quantity).toString())+ " pcs";
+            }
+          }
+        } else if (items[k].orderAs == "1000") {
+          quantity =  insertComma(spreadsheetArray.attributes[items[k].code].toString()) * items[k].quantity;
+          table += quantity + " pcs";
         } else {
           table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
         }
@@ -209,4 +238,16 @@ var buildPackingRow = function(spreadsheetArray) {
   }
 
   return table;
+};
+
+var insertComma = function(number) {
+  if (number.length < 4) {
+    return number;
+  } else if (number.length > 6) {
+    number = number.slice(0,number.length-6) + "," + number.slice(number.length-6, number.length-3) + "," + number.slice(number.length-3);
+    return number;
+  } else {
+    number = number.slice(0,number.length-3) + "," + number.slice(number.length-3);
+    return number;
+  }
 };

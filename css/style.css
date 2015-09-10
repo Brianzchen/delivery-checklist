@@ -78,6 +78,13 @@ h2, h3 {
   margin-bottom: 0;
 }
 
+/* Disable spinner for item input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .logo {
   position: relative;
   top: 18px;
@@ -85,16 +92,13 @@ h2, h3 {
   width: 50px;
 }
 
-.chooseShopHeader {
+.subHeader {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .checkboxes {
-  margin-top: 10px;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 5px;
 }
 
 .load {
@@ -104,6 +108,7 @@ h2, h3 {
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 li {
@@ -111,73 +116,72 @@ li {
 }
 
 .item {
-  width: 80%;
-  margin: 0 auto;
   margin-top: 15px;
 }
 
 .saveOrderBtn {
   position: fixed;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
 }
 
-.btn {
-  background: #a6a6a6;
-  background-image: -webkit-linear-gradient(top, #a6a6a6, #4a4a4a);
-  background-image: -moz-linear-gradient(top, #a6a6a6, #4a4a4a);
-  background-image: -ms-linear-gradient(top, #a6a6a6, #4a4a4a);
-  background-image: -o-linear-gradient(top, #a6a6a6, #4a4a4a);
-  background-image: linear-gradient(to bottom, #a6a6a6, #4a4a4a);
-  -webkit-border-radius: 29;
-  -moz-border-radius: 29;
-  border-radius: 29px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 10px;
-  padding: 5px 20px 6px 20px;
-  text-decoration: none;
-  outline:none;
+.clean-gray-btn {
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: linear-gradient(top, #eeeeee, #cccccc);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  border-radius: 3px;
+  color: #333;
+  font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  padding: 2px 5px;
+  text-align: center;
+  text-shadow: 0 1px 0 #eee;
+  width: 150px;
+  outline: none;
+}
+
+.clean-gray-btn:hover {
+  background-color: #dddddd;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #bbbbbb));
+  background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+  background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+  background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+  background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+  background-image: linear-gradient(top, #dddddd, #bbbbbb);
+  border: 1px solid #bbb;
+  border-bottom: 1px solid #999;
   cursor: pointer;
+  text-shadow: 0 1px 0 #ddd;
 }
 
-.btn:hover {
-  background: #c2c2c2;
-  background-image: -webkit-linear-gradient(top, #c2c2c2, #a6a6a6);
-  background-image: -moz-linear-gradient(top, #c2c2c2, #a6a6a6);
-  background-image: -ms-linear-gradient(top, #c2c2c2, #a6a6a6);
-  background-image: -o-linear-gradient(top, #c2c2c2, #a6a6a6);
-  background-image: linear-gradient(to bottom, #c2c2c2, #a6a6a6);
-  text-decoration: none;
+.clean-gray-btn:active {
+  border: 1px solid #aaa;
+  border-bottom: 1px solid #888;
+  -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+  box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
 }
 
-.btnShops {
-  background: #a6a6a6;
-  background-image: -webkit-linear-gradient(top, #a6a6a6, #4a4a4a);
-  background-image: -moz-linear-gradient(top, #a6a6a6, #4a4a4a);
-  background-image: -ms-linear-gradient(top, #a6a6a6, #4a4a4a);
-  background-image: -o-linear-gradient(top, #a6a6a6, #4a4a4a);
-  background-image: linear-gradient(to bottom, #a6a6a6, #4a4a4a);
-  -webkit-border-radius: 29;
-  -moz-border-radius: 29;
-  border-radius: 29px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 15px;
-  padding: 5px 20px 6px 20px;
-  text-decoration: none;
-  outline:none;
-  cursor: pointer;
+.clean-gray-btn-shop {
+  font: bold 15px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  width: 100%;
 }
 
-.btnShops:hover {
-  background: #c2c2c2;
-  background-image: -webkit-linear-gradient(top, #c2c2c2, #a6a6a6);
-  background-image: -moz-linear-gradient(top, #c2c2c2, #a6a6a6);
-  background-image: -ms-linear-gradient(top, #c2c2c2, #a6a6a6);
-  background-image: -o-linear-gradient(top, #c2c2c2, #a6a6a6);
-  background-image: linear-gradient(to bottom, #c2c2c2, #a6a6a6);
-  text-decoration: none;
+.shopList {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#orderForm {
+  position: relative;
+  left: 5%;
+  width: 90%;
 }
 
 #loading {
@@ -197,10 +201,6 @@ table, th, td {
 
 #print {
   font-size: 10px;
-}
-
-#printButton {
-  text-align: center;
 }
 
 .center {
@@ -243,20 +243,14 @@ table, th, td {
 }
 
 @media screen and (min-width: 1000px) {
-  .shopList {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  .btnShops {
-    margin-right: 5px;
-    width: 40%;
+  .clean-gray-btn-shop {
+    width: 23.5%;
   }
 
-  .checkboxes {
-    position: relative;
-    left: 20px;
-    width: 25%;
+  #orderForm {
+    left: 12.5%;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 

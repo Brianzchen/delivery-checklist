@@ -20,11 +20,28 @@
       city: "",
       selected: false
     };
+    self.searchBox = "";
+    self.displayedItems = model.items;
     self.viewList = false;
     self.printableShop = [];
     self.spreadsheetArray = [];
     self.shops = model.shops;
     self.items = model.items;
+
+    // Loops through items in list and if it matches what's in the search bar
+    // it will display the item
+    self.search = function() {
+      if (self.searchBox == " ") {
+        self.displayedItems = model.items;
+      } else {
+        self.displayedItems = [];
+        for (i = 0, len = self.items.length; i < len; i++) {
+          if (self.items[i].description.toLowerCase().includes(self.searchBox.toLowerCase()) || self.items[i].code.toLowerCase().includes(self.searchBox.toLowerCase())) {
+            self.displayedItems.push(self.items[i]);
+          }
+        }
+      }
+    };
 
     // Changed the viewOrder value when clicked
     self.changeView = function() {
@@ -115,7 +132,7 @@
           buildTable(spreadsheetArray);
           buildPackingSlips(spreadsheetArray);
           $("#printButton").empty();
-          $("#printButton").append('<button class="btn" onclick="window.print()">Print</button>');
+          $("#printButton").append('<button class="clean-gray-btn" onclick="window.print()">Print</button>');
         }, 2500);
 
         query.descending("updatedAt");
@@ -154,6 +171,7 @@
     shopData.save(null,{
       success: function(shopData) {
         console.log('New object created with objectId: ' + shopData.id);
+        alert("Thanks, Your order has been saved for " + shopData.attributes.name + "!");
       },
       error: function(shopData, error) {
         // Execute any logic that should take place if the save fails.

@@ -274,6 +274,7 @@ var model = {
       "code": "FW003",
       "description": "Fruit World roll bag (300x450mm) 3kg",
       "unit": "Roll",
+      "quantity": 4,
       "packaging": "4 rolls/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -282,6 +283,7 @@ var model = {
       "code": "ROLL05",
       "description": "Roll bag (300x450mm) 3kg",
       "unit": "Roll",
+      "quantity": 4,
       "packaging": "4 rolls/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -314,6 +316,15 @@ var model = {
       "ordered": 0
     },
     {
+      "code": "PRB03NZ",
+      "description": "Produce bag (200x300mm) 1.0kg NZ Made",
+      "unit": "1000",
+      "quantity": 5000,
+      "packaging": "5,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
       "code": "PRB04",
       "description": "Produce bag (225x375mm) 1.5kg",
       "unit": "1000",
@@ -323,11 +334,29 @@ var model = {
       "ordered": 0
     },
     {
+      "code": "PRB04NZ",
+      "description": "Produce bag (225x375mm) 1.5kg NZ Made",
+      "unit": "1000",
+      "quantity": 4000,
+      "packaging": "4,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
       "code": "PRB05",
-      "description": "Produce bag (250x425mm) 2.0kg",
+      "description": "Produce bag (225x425mm) 2.0kg",
       "unit": "1000",
       "quantity": 3000,
       "packaging": "3,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "PRB05NZ",
+      "description": "Produce bag (225x425mm) 2.0kg NZ Made",
+      "unit": "1000",
+      "quantity": 3500,
+      "packaging": "3,500 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
     },
@@ -353,8 +382,8 @@ var model = {
       "code": "POTA01R",
       "description": "Potato bag 3.0kg red",
       "unit": "1000",
-      "quantity": 1000,
-      "packaging": "1,000 pcs/ctn",
+      "quantity": 2000,
+      "packaging": "2,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
     },
@@ -362,8 +391,8 @@ var model = {
       "code": "POTA01Y",
       "description": "Potato bag 3.0kg yellow",
       "unit": "1000",
-      "quantity": 1000,
-      "packaging": "1,000 pcs/ctn",
+      "quantity": 2000,
+      "packaging": "2,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
     },
@@ -568,49 +597,247 @@ var model = {
       "ordered": 0
     },
     {
-      "code": "RE010",
-      "description": "Resealable bag (130x155mm)",
-      "unit": "1000",
-      "quantity": 500,
-      "packaging": "500 pcs/box",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "RE001",
+        "description": "Resealable bag (25x25mm) 40mu",
+        "unit": "1000",
+        "quantity": 50000,
+        "packaging": "50,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
     },
     {
-      "code": "RE017",
-      "description": "Resealable bag (200x255mm)",
-      "unit": "1000",
-      "quantity": 250,
-      "packaging": "250 pcs/box",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "RE002",
+        "description": "Resealable bag (50x50mm) 40mu",
+        "unit": "1000",
+        "quantity": 20000,
+        "packaging": "20,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
     },
     {
-      "code": "RE018",
-      "description": "Resealable bag (255x355mm)",
-      "unit": "1000",
-      "quantity": 250,
-      "packaging": "250 pcs/box",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "RE003",
+        "description": "Resealable bag (50x60mm) 40mu",
+        "unit": "1000",
+        "quantity": 20000,
+        "packaging": "20,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
     },
     {
-      "code": "RE019",
-      "description": "Resealable bag (305x380mm)",
-      "unit": "1000",
-      "quantity": 250,
-      "packaging": "250 pcs/box",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "RE004",
+        "description": "Resealable bag (50x75mm) 40mu",
+        "unit": "1000",
+        "quantity": 18000,
+        "packaging": "18,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
     },
     {
-      "code": "RE020",
-      "description": "Resealable bag (305x440mm)",
-      "unit": "1000",
-      "quantity": 250,
-      "packaging": "250 pcs/box",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "RE005",
+        "description": "Resealable bag (62x75mm) 40mu",
+        "unit": "1000",
+        "quantity": 18000,
+        "packaging": "18,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE006",
+        "description": "Resealable bag (75x100mm) 40mu",
+        "unit": "1000",
+        "quantity": 18000,
+        "packaging": "18,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE007",
+        "description": "Resealable bag (75x130mm) 40mu",
+        "unit": "1000",
+        "quantity": 16000,
+        "packaging": "16,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE008",
+        "description": "Resealable bag (100x130mm) 40mu",
+        "unit": "1000",
+        "quantity": 12000,
+        "packaging": "12,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE009",
+        "description": "Resealable bag (100x155mm) 40mu",
+        "unit": "1000",
+        "quantity": 8000,
+        "packaging": "8,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE010",
+        "description": "Resealable bag (130x155mm) 40mu",
+        "unit": "1000",
+        "quantity": 8000,
+        "packaging": "8,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE011",
+        "description": "Resealable bag (130x200mm) 40mu",
+        "unit": "1000",
+        "quantity": 6000,
+        "packaging": "6,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE012",
+        "description": "Resealable bag (155x180mm) 40mu",
+        "unit": "1000",
+        "quantity": 6000,
+        "packaging": "6,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE013",
+        "description": "Resealable bag (155x230mm) 40mu",
+        "unit": "1000",
+        "quantity": 4000,
+        "packaging": "4,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE014",
+        "description": "Resealable bag (180x255mm) 50mu",
+        "unit": "1000",
+        "quantity": 2000,
+        "packaging": "2,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE015",
+        "description": "Resealable bag (195x195mm) 50mu",
+        "unit": "1000",
+        "quantity": 4000,
+        "packaging": "4,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE016",
+        "description": "Resealable bag (200x255mm) 50mu",
+        "unit": "1000",
+        "quantity": 2000,
+        "packaging": "2,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE017",
+        "description": "Resealable bag (230x305mm) 50mu",
+        "unit": "1000",
+        "quantity": 2000,
+        "packaging": "2,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE018",
+        "description": "Resealable bag (255x305mm) 50mu",
+        "unit": "1000",
+        "quantity": 2000,
+        "packaging": "2,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE019",
+        "description": "Resealable bag (255x355mm) 50mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE020",
+        "description": "Resealable bag (330x330mm) 50mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE021",
+        "description": "Resealable bag (305x380mm) 50mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE022",
+        "description": "Resealable bag (305x440mm) 50mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE007H",
+        "description": "Resealable bag (75x130mm) 70mu",
+        "unit": "1000",
+        "quantity": 8000,
+        "packaging": "8,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE010H",
+        "description": "Resealable bag (130x155mm) 70mu",
+        "unit": "1000",
+        "quantity": 4000,
+        "packaging": "4,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE013H",
+        "description": "Resealable bag (155x230mm) 70mu",
+        "unit": "1000",
+        "quantity": 2000,
+        "packaging": "2,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE017H",
+        "description": "Resealable bag (230x305mm) 70mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
+    },
+    {
+        "code": "RE021H",
+        "description": "Resealable bag (305x380mm) 70mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "1000",
+        "ordered": 0
     },
     {
       "code": "FORK",
@@ -625,6 +852,7 @@ var model = {
       "code": "ROLL04",
       "description": "Roll bag (250x125x475mm) 5.0kg",
       "unit": "Roll",
+      "quantity": 4,
       "packaging": "4 rolls/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -758,8 +986,56 @@ var model = {
       "ordered": 0
     },
     {
+      "code": "T2551",
+      "description": "Plastic box T2551",
+      "unit": "Ctn",
+      "packaging": "200 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "T3617",
+      "description": "Plastic box T3617 (400 grams)",
+      "unit": "Ctn",
+      "packaging": "250 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "T3622",
+      "description": "Plastic box T3622 (250 grams)",
+      "unit": "Ctn",
+      "packaging": "360 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "T3628",
+      "description": "Plastic box T3628 (500 grams)",
+      "unit": "Ctn",
+      "packaging": "220 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "CHB01",
+      "description": "Checkout paper bag (Small)",
+      "unit": "Ctn",
+      "packaging": "250 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
       "code": "CHB02",
       "description": "Checkout paper bag (Medium)",
+      "unit": "Ctn",
+      "packaging": "250 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "CHB03",
+      "description": "Checkout paper bag (Large)",
       "unit": "Ctn",
       "packaging": "250 pcs/ctn",
       "orderAs": "ctn",
@@ -771,6 +1047,51 @@ var model = {
       "unit": "Set",
       "packaging": "200 sets/ctn+ctn",
       "orderAs": "sets",
+      "ordered": 0
+    },
+    {
+      "code": "PPB001",
+      "description": "PP bag (100x160mm)",
+      "unit": "1000",
+      "quantity": 1000,
+      "packaging": "",
+      "orderAs": "1000",
+      "ordered": 0
+    },
+    {
+      "code": "PPB002",
+      "description": "PP bag (120x140mm)",
+      "unit": "1000",
+      "quantity": 1000,
+      "packaging": "",
+      "orderAs": "1000",
+      "ordered": 0
+    },
+    {
+      "code": "PPB003",
+      "description": "PP bag (140x160mm)",
+      "unit": "1000",
+      "quantity": 1000,
+      "packaging": "",
+      "orderAs": "1000",
+      "ordered": 0
+    },
+    {
+      "code": "PPB004",
+      "description": "PP bag (130x220mm)",
+      "unit": "1000",
+      "quantity": 1000,
+      "packaging": "",
+      "orderAs": "1000",
+      "ordered": 0
+    },
+    {
+      "code": "PPB005",
+      "description": "PP bag (150x250mm)",
+      "unit": "1000",
+      "quantity": 1000,
+      "packaging": "",
+      "orderAs": "1000",
       "ordered": 0
     },
     {
